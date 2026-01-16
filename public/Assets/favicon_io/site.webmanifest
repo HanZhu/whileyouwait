@@ -1,0 +1,19 @@
+{
+    "name": "AI Break Time",
+    "short_name": "Break Time",
+    "icons": [
+        {
+            "src": "/Assets/favicon_io/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/Assets/favicon_io/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#FFB8A3",
+    "background_color": "#FFE5E5",
+    "display": "standalone"
+}
