@@ -1,0 +1,75 @@
+import React, { useState, useEffect } from 'react';
+import './Home.css';
+
+function Home({ setMode }) {
+    const [showReward, setShowReward] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowReward(true);
+        }, 10000);
+        return () => clearTimeout(timer);
+    }, []);
+
+    return (
+        <div className="home-cute fade-in">
+            <div className="home-soft-container">
+                <div className="home-center-content">
+                    <div className="mascot-top-avatar">
+                        <img src="/Assets/Cat_Main.png" alt="Mascot" className="cute-mascot-img-breathe" />
+                    </div>
+
+                    <h1 className="h1-cute-signature">
+                        While You Wait<span className="dot-pulse">.</span>
+                    </h1>
+
+                    <p className="p-cute-pauses">
+                        <span className="p-intro">AI thinking hard?</span>
+                        <br /><br />
+                        Take a breather.
+                        <br />
+                        Explore some knowledge,
+                        <br />
+                        play a quick game,
+                        <br />
+                        do some math,
+                        <br />
+                        or enjoy some art
+                        <br />
+                        while the robot does the heavy lifting.
+                    </p>
+
+                    {showReward && (
+                        <div className="waiting-reward fade-in">
+                            “You’re very good at waiting.”
+                        </div>
+                    )}
+
+                    <div className="home-actions-designer-grid">
+                        <button className="btn-learn" onClick={() => setMode('learn')}>
+                            Learn Something
+                        </button>
+                        <button className="btn-game" onClick={() => setMode('game')}>
+                            Play a Quick Game
+                        </button>
+                        <button className="btn-math" onClick={() => setMode('math')}>
+                            Do Some Math
+                        </button>
+                        <button className="btn-art" onClick={() => setMode('art')}>
+                            Enjoy Some Art
+                        </button>
+                    </div>
+                </div>
+
+                <div className="footer-visual-row">
+                    <img src="/Assets/Cat_Learn.png" alt="" className="footer-cat" />
+                    <img src="/Assets/Cat_Math.png" alt="" className="footer-cat" />
+                    <img src="/Assets/Cat_Play.png" alt="" className="footer-cat" />
+                    <img src="/Assets/Cat_Art.png" alt="" className="footer-cat" />
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export default Home;

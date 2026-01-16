@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@400;600;700&display=swap');
+
+:root {
+  /* Cute Cat Palette */
+  --color-outer-bg: #FFCFCC;
+  /* Original Soft Pink */
+
+
+  --color-card-bg: #FFFFFF;
+  /* Pure White for cleaner look */
+  /* --color-card-bg: #FFF9E6; Old Warm Cream */
+
+  --color-primary: #FF8450;
+  /* Vibrant Orange */
+  --color-text: #4B4444;
+  /* Soft Charcoal */
+  --color-secondary: #FFB3A1;
+  /* Lighter Pinkish */
+
+  /* Cute UI Variables */
+  --radius-xl: 40px;
+  --radius-l: 25px;
+  --shadow-cute: 0 10px 0px rgba(0, 0, 0, 0.05);
+  /* Flat-ish shadow */
+
+  /* Typography */
+  --font-main: 'Fredoka', 'Quicksand', sans-serif;
+
+  /* Easing */
+  --ease-bouncy: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-outer-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  padding: 40px;
+  /* The "Frame" spacing */
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.App {
+  width: 100%;
+  max-width: 1200px;
+  background-color: var(--color-card-bg);
+  min-height: calc(100vh - 80px);
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+/* 
+   CRITICAL FIX: Home Mode - "Ghost Container"
+   We completely strip the .App container of its visibility properties
+   so it acts purely as a layout wrapper, allowing the video card
+   to shine through against the body background.
+*/
+.App.mode-home {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+  /* Key for avatar pop-out */
+  min-height: auto !important;
+  /* Don't force height */
+  transform: none !important;
+}
+
+/* Ensure container-cute doesn't restrict home too much */
+.App.mode-home .container-cute {
+  padding: 0 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible !important;
+  width: 100%;
+}
+
+/* Home Mode: Remove the "White Layer" card effect */
+.App.mode-home {
+  background-color: transparent;
+  box-shadow: none;
+  overflow: visible;
+  /* Allow avatar pop-out */
+}
+
+/* Ensure container-cute doesn't restrict home too much */
+.App.mode-home .container-cute {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* HEADER STYLE */
+.site-header {
+  padding: 30px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cinch-logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.site-nav {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-link {
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--color-text);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+  color: var(--color-primary);
+}
+
+.container-cute {
+  flex: 1;
+  padding: 40px 60px;
+  overflow-y: auto;
+}
+
+/* BUTTONS */
+.btn-back-simple {
+  background: #eee;
+  border: 1px solid #ccc;
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-family: var(--font-main);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.btn-primary-cute {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 15px 40px;
+  border-radius: var(--radius-l);
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s var(--ease-bouncy);
+}
+
+.btn-secondary-cute {
+  background-color: transparent;
+  color: var(--color-primary);
+  padding: 15px 40px;
+  border-radius: var(--radius-l);
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: 3px solid var(--color-primary);
+  cursor: pointer;
+  transition: transform 0.3s var(--ease-bouncy);
+}
+
+.btn-primary-cute:hover,
+.btn-secondary-cute:hover {
+  transform: scale(1.05);
+}
+
+/* Typography */
+.h1-cute {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.p-cute {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+
+  .App {
+    min-height: calc(100vh - 30px);
+    border-radius: 30px;
+  }
+
+  .container-cute {
+    padding: 30px 20px;
+  }
+
+  .h1-cute {
+    font-size: 2.2rem;
+  }
+
+  .site-header {
+    padding: 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+/* Global Top CTA - Low Exposure & Centered */
+.global-top-cta {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  color: #666;
+  /* Gray text */
+  opacity: 0.4;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 9999;
+  font-family: var(--font-main);
+  letter-spacing: 0.3px;
+}
+
+.global-top-cta a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+.global-top-cta a:hover {
+  opacity: 1;
+  color: var(--color-primary);
+}
+
+/* Ensure no overlap on very small screens */
+@media (max-width: 480px) {
+  .global-top-cta {
+    font-size: 0.7rem;
+    top: 8px;
+  }
+}

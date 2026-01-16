@@ -1,0 +1,253 @@
+.home-cute {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff5f2;
+    padding: 20px;
+}
+
+.home-soft-container {
+    background: #fffcf9;
+    width: 100%;
+    max-width: 920px;
+    height: auto;
+    min-height: 85vh;
+    max-height: 90vh;
+    border-radius: 28px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 50px 40px 20px;
+    overflow: hidden;
+}
+
+.home-center-content {
+    z-index: 2;
+    max-width: 520px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+    padding-bottom: 40px;
+}
+
+/* 3. Avatar Breathing */
+.mascot-top-avatar {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 30px;
+}
+
+.cute-mascot-img-breathe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--color-primary);
+    animation: breathe 12s ease-in-out infinite;
+}
+
+@keyframes breathe {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.03);
+    }
+}
+
+/* 4. Headline & Pulsing Dot */
+.h1-cute-signature {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--color-text);
+}
+
+.dot-pulse {
+    display: inline-block;
+    color: var(--color-primary);
+    animation: dotPulse 7s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* 5. Subcopy Pauses */
+.p-cute-pauses {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #8a8a8a;
+    font-weight: 500;
+    margin-bottom: 35px;
+}
+
+.p-intro {
+    font-size: 0.9rem;
+    color: #bbb;
+    letter-spacing: 0.3px;
+}
+
+/* 6. Primary Actions (2x2 Grid + Micro-interactions) */
+.home-actions-designer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    width: 100%;
+    max-width: 480px;
+}
+
+.home-actions-designer-grid button {
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 16px 28px;
+    border-radius: 999px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 180ms ease-out;
+}
+
+.btn-learn:hover {
+    transform: translateX(2px);
+}
+
+.btn-game:hover {
+    transform: scale(1.05);
+}
+
+.btn-math:hover {
+    transform: translateY(2px);
+}
+
+.btn-art:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(255, 120, 80, 0.25);
+}
+
+/* Asymmetrical Alignment - 4-6px offset */
+.btn-math {
+    transform: translateY(5px);
+}
+
+.btn-art {
+    transform: translateY(5px);
+}
+
+/* 7. Footer Visual Row */
+.footer-visual-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 30px;
+    width: 100%;
+    padding-bottom: 10px;
+    z-index: 1;
+}
+
+.footer-cat {
+    width: 75px;
+    height: 100px;
+    object-fit: cover;
+    object-position: bottom;
+    border-radius: 38px 38px 0 0;
+    opacity: 0.85;
+    transition: transform 0.3s ease;
+}
+
+.footer-cat:hover {
+    transform: translateY(-4px);
+    opacity: 1;
+}
+
+.footer-visual-row :nth-child(odd) {
+    transform: translateY(4px);
+    width: 75px;
+    height: 95px;
+}
+
+.footer-visual-row :nth-child(even) {
+    transform: translateY(-2px);
+    width: 68px;
+    height: 88px;
+}
+
+/* 8. Waiting Reward */
+.waiting-reward {
+    font-size: 0.8rem;
+    color: #d0d0d0;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-style: italic;
+    font-weight: 500;
+}
+
+@media (max-height: 750px) {
+    .home-soft-container {
+        padding: 40px 30px 15px;
+        min-height: 80vh;
+    }
+
+    .h1-cute-signature {
+        font-size: 2.4rem;
+    }
+
+    .p-cute-pauses {
+        margin-bottom: 25px;
+        font-size: 1rem;
+    }
+
+    .home-actions-designer-grid {
+        gap: 14px;
+    }
+
+    .footer-cat {
+        width: 60px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 600px) {
+    .home-actions-designer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-visual-row {
+        gap: 15px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .cute-mascot-img-breathe,
+    .dot-pulse {
+        animation: none;
+    }
+
+    .btn-learn:hover,
+    .btn-game:hover,
+    .btn-math:hover,
+    .btn-art:hover {
+        transform: none;
+    }
+}
