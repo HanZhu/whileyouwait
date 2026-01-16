@@ -5,6 +5,7 @@
 - **Math Section**: Implemented automatic filtering to skip problems with Asymptote diagrams, ensuring instant loading for all questions (no more timeouts).
 - **Learn Section**: Added randomized example keywords (30 topics total) that shuffle on each page refresh, providing fresh inspiration every visit.
 - **Global CTA**: Refined visibility—now hidden on the homepage for a cleaner landing experience, visible on all other sections.
+- **Performance**: Optimized all assets for production—compressed cat images from PNG to JPG (85% quality) and background video to 720p, reducing total asset size from 49MB to 6.4MB (87% reduction).
 
 ### Removed
 - **Math Section**: Removed all Asymptote diagram rendering infrastructure (AsyRenderer, Vite proxy, timeout handling) for a simpler, faster experience.
