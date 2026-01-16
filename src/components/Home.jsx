@@ -3,6 +3,7 @@ import './Home.css';
 
 function Home({ setMode }) {
     const [showReward, setShowReward] = useState(false);
+    const [videoLoaded, setVideoLoaded] = useState(false);
 
     useEffect(() => {
         const timer = setTimeout(() => setShowReward(true), 1200);
@@ -12,14 +13,22 @@ function Home({ setMode }) {
     return (
         <div className="home-video-container">
             <div className="home-card-wrapper">
+                {/* Loading Animation */}
+                {!videoLoaded && (
+                    <div className="video-loading-overlay">
+                        <div className="loading-pulse"></div>
+                    </div>
+                )}
+
                 {/* Video Background */}
                 <video
-                    className="home-bg-video"
+                    className={`home-bg-video ${videoLoaded ? 'loaded' : ''}`}
                     autoPlay
                     muted
                     loop
                     playsInline
                     preload="auto"
+                    onLoadedData={() => setVideoLoaded(true)}
                 >
                     <source src={`/Assets/Cat_BG.mp4?v=${Date.now()}`} type="video/mp4" />
                 </video>

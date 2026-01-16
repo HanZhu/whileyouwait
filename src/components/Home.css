@@ -41,7 +41,68 @@
     border-radius: 32px;
     box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
     z-index: 0;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
 }
+
+.home-bg-video.loaded {
+    opacity: 1;
+}
+
+/* Video Loading Animation */
+.video-loading-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 32px;
+    background: linear-gradient(135deg, #FFE5E5 0%, #FFD4D4 50%, #FFE5E5 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease-in-out infinite;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-pulse {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.9);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
+    }
+
+    50% {
+        transform: scale(1);
+        box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+    }
+
+    100% {
+        transform: scale(0.9);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+
 
 /* Vignette effect - Fills the wrapper */
 .home-video-overlay {
