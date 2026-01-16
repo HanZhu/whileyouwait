@@ -120,6 +120,12 @@
     backdrop-filter: blur(2px);
     z-index: 1;
     pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.home-bg-video.loaded~.home-video-overlay {
+    opacity: 1;
 }
 
 /* Content Layer - Pins exactly to the card borders */
