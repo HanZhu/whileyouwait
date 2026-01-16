@@ -181,7 +181,7 @@ function MathSection() {
 
             <aside className="original-sidebar">
                 <div className="portrait-frame">
-                    <img src="/Assets/Cat_Math.png" alt="Companion" className="sidebar-mascot" />
+                    <img src="/Assets/Cat_Math.jpg" alt="Companion" className="sidebar-mascot" />
                 </div>
                 <div className="sidebar-stats">
                     <span className="label-cinch">MATH TUTOR</span>

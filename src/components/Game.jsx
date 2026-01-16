@@ -490,7 +490,7 @@ function Game() {
 
             <aside className="original-sidebar">
                 <div className="portrait-frame">
-                    <img src="/Assets/Cat_Play.png" alt="Companion" className="sidebar-mascot" />
+                    <img src="/Assets/Cat_Play.jpg" alt="Companion" className="sidebar-mascot" />
                 </div>
                 <div className="sidebar-stats">
                     <span className="label-cinch">GAME BUDDY</span>

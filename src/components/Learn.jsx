@@ -109,7 +109,7 @@ function Learn() {
                         <div className="knowledge-card">
                             <div className="knowledge-hero">
                                 <img
-                                    src={data.thumbnail ? data.thumbnail.source : '/Assets/Learning_default.png'}
+                                    src={data.thumbnail ? data.thumbnail.source : '/Assets/Learning_default.jpg'}
                                     alt={data.title}
                                     className="knowledge-img"
                                 />
@@ -140,7 +140,7 @@ function Learn() {
 
             <aside className="original-sidebar">
                 <div className="portrait-frame">
-                    <img src="/Assets/Cat_Learn.png" alt="Learn Mascot" className="sidebar-mascot" />
+                    <img src="/Assets/Cat_Learn.jpg" alt="Learn Mascot" className="sidebar-mascot" />
                 </div>
                 <div className="sidebar-stats">
                     <span className="label-cinch">LIBRARY CAT</span>

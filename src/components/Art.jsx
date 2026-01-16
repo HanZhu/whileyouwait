@@ -104,7 +104,7 @@ function Art() {
 
             <aside className="original-sidebar">
                 <div className="portrait-frame">
-                    <img src="/Assets/Cat_Art.png" alt="Art Mascot" className="sidebar-mascot" />
+                    <img src="/Assets/Cat_Art.jpg" alt="Art Mascot" className="sidebar-mascot" />
                 </div>
                 <div className="sidebar-stats">
                     <span className="label-cinch">GALLERY CAT</span>
