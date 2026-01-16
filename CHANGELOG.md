@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## [v3.0] - 2026-01-16 "Production Ready & Premium UX"
+### Added
+- **Favicon**: Complete favicon suite for all devices (16x16, 32x32, 180x180, ICO format)
+- **PWA Manifest**: Progressive Web App support with custom branding and theme colors
+- **Loading Animations**: 
+  - Homepage video background with elegant pink gradient pulse loader
+  - Smooth fade-in transitions for video, shadow, and vignette overlay (no black frame!)
+  - All cat mascot images fade in gracefully across all sections (Learn, Math, Game, Art)
+- **Custom Domain**: Deployed to https://aibreaktime.com with www redirect support
+
+### Changed
+- **Branding**: Updated page title to "AI Break Time - While You Wait"
+- **Visual Polish**: Video and overlay now fade in together, eliminating the initial black frame issue
+
 ## [v2.1] - 2026-01-16 "Optimization & Polish"
 ### Changed
 - **Math Section**: Implemented automatic filtering to skip problems with Asymptote diagrams, ensuring instant loading for all questions (no more timeouts).
